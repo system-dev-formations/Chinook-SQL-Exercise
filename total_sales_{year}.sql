@@ -9,14 +9,14 @@ WHERE InvoiceDate between "2009-01-01" AND "2010-01-01";
 
 
 -- 2010 = $481.45
-SELECT SUM(Total as "Total Sales")
+SELECT SUM(Total )as "Total Sales"
 FROM Invoice
 WHERE InvoiceDate between "2010-01-01" AND "2011-01-01";
 
 
 
 
---2011 = $951.03
-SELECT SUM(Total as "Total Sales")
+--2011 = $469.58
+SELECT SUM(Total)as "Total Sales"
 FROM Invoice
 WHERE InvoiceDate between "2011-01-01" AND "2012-01-01";

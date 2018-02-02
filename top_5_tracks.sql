@@ -1,13 +1,9 @@
 -- Provide a query that shows the top 5 most purchased songs.
 
 
-SELECT "Track Name", "Units Sold"
-FROM
-(SELECT COUNT(il.Quantity) as "Units Sold", t.Name "Track Name"
+SELECT t.Name, count(t.Name) as "PurchaseCount"
 FROM Track t
-JOIN InvoiceLine il
-ON il.TrackId = t.TrackId
-GROUP BY t.TrackId)
-ORDER BY "Units Sold" DESC
-LIMIT 5;
-
+JOIN InvoiceLine l on l.TrackId =t.Trackid
+group by t.Name
+order by PurchaseCount desc
+limit 5;
